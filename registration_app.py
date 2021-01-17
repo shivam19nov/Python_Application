@@ -13,11 +13,9 @@ def login_pg():
     if request.method == 'POST':
         email = request.form.getlist('email')[0].strip()
         pswrd = request.form.getlist('password')[0].strip()
-        print(email, pswrd)
         conn = cf.create_connection('subscription.db')
         user_detail = cf.fetch_user(conn, email, pswrd)
         cf.close_connection(conn)
-        print(user_detail)
         if user_detail:
             return render_template('user.html', user_detail = user_detail)
         else:
@@ -27,7 +25,6 @@ def login_pg():
                 'message': 'Unable to Login User ' + email.lower(),
                 'option' : 'Please Check Your Credentials.'
             }
-            print('User Login Failed')
             return render_template('login_pg.html', result = result)
     else:
         return render_template('login_pg.html')
@@ -51,7 +48,6 @@ def register_pg():
                 'message': 'Registration Failed for ' + lname.title() + ', ' + fname.title(),
                 'option' : 'Please Try again with different email.'
             }
-            print('User Creation Failed')
             return render_template('register_pg.html', result = result)
     else:
         return render_template('register_pg.html', result = {})
