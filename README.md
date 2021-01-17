@@ -20,8 +20,11 @@ Project is created with:
 * HeroIcons
 
 ## Execution
-**Live Application available here -> [Registration Application](https://registration-form-flask.herokuapp.com/)**
-**Download Entire Code From here -> **
+**Live Application available here -> [Registration Application](https://registration-form-flask.herokuapp.com/)** <br/>
+**Download Entire Code From here -> [Code zip](https://github.com/shivam19nov/RegistractionApplication/archive/main.zip)**
+
+**To execte the code :** <br/>
+``` python3 <your_dir>/RegistractionApplication/registration_app.py ```
 
 ## Validation
 
