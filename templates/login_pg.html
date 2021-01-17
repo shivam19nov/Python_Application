@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+
+<title>Login</title>
+{% endblock %}
+
+{% block body %}
+<div class="items-center justify-center flex flex-col bg-transparent">
+      {% if result|length > 0 %}
+        <!-- myalert({{result.message}}) -->
+        <div class="mb-5">
+          <p class="text-center text-xs text-yellow-700 font-bold">{{result.message}}</p>
+          <p class="text-center text-xs text-yellow-700 font-bold">{{result.option}}</p>
+        </div>
+        
+      {% endif %}
+    <div class="flex flex-col bg-white px-10 py-8 shadow-2xlv md:rounded-lg">
+      <div class="text-base md:text-2xl">LOGIN TO YOUR ACCOUNT</div>
+      <div class="mt-8">
+        <form action="/" method="POST">
+
+          <div class="mb-5">
+            <label for="email" class="text-gray-600 mb-1">E-Mail Address:</label>
+            <div class="relative">
+                <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-600">
+                  <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                  </svg>
+                </div>
+                <input id="email" type="email" name="email" class="placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-green-400" placeholder="E-Mail Address" required/>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <label for="password" class="text-gray-600 mb-1">Password:</label>
+            <div class="relative">
+                <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-600">
+                  <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                </div>
+                <input id="password" type="password" name="password"
+                    class="placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-green-400" placeholder="Password" required/>
+            </div>
+          </div>
+          <div id="searchingimageDiv" style="display:none"> <img id="searchingimage1" src="http://www.pathtoyourimage/images/searching.gif" alt="" /> </div>
+          <div class="mt-6">
+            <button type="submit" onClick="setTimeout( myfunction, delay );"
+                class="flex items-center justify-center focus:outline-none 
+                    text-white text-sm sm:text-base bg-green-600 hover:bg-green-800 rounded py-2 w-full">
+              <span class="mr-2">LOGIN</span>
+              <span>
+                <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                </svg>
+              </span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+      <div class="flex justify-center  mt-6">
+        <a href="/register" target="_self"  class="inline-flex text-green-600 hover:text-green-800 ">
+        <span>
+            <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+            </svg>
+            </span>
+          <span class="ml-2">Don't have an account?</span>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
