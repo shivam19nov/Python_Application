@@ -20,7 +20,7 @@ Project is created with:
 * HeroIcons
 	
 ## Execution
-Live Application available here -> [Registration Application](https://dashboard.heroku.com/apps/registration-form-flask/resources)
+Live Application available here -> [Registration Application](https://registration-form-flask.herokuapp.com/)
 
 ## Validation
 
