@@ -18,14 +18,15 @@ Project is created with:
 * HTML
 * Tailwind CSS
 * HeroIcons
-	
+
 ## Execution
-Live Application available here -> [Registration Application](https://registration-form-flask.herokuapp.com/)
+**Live Application available here -> [Registration Application](https://registration-form-flask.herokuapp.com/)**
+**Download Entire Code From here -> **
 
 ## Validation
 
 ### FrontEnd
-While Capturing the data in form, following validations are done:
+**While Capturing the data in form, following validations are done:**
 * User First Name length should be 3-12 character long
 * User Name should contain only letters
 * User Last Name length should be 3-12 character long
@@ -33,11 +34,11 @@ While Capturing the data in form, following validations are done:
 * Password should be greater than 8 characters
 * Email should follow standard email rules.
 
-Other Validation:
+**Other Validation:**
 * While Logging into the form, if credentials not match, then login will fail with a failure message.
 * While registration, if user is already registered then registration will fail.
 
 ### BackEnd
-* Password is encrypted while storing it in database.
+* Passwords are **encrypted** while storing it in database.
 * User Name and email is stored in lower case into the database to keep data clean.
 * Whitespaces are trimmed if any, in User Name or email.
