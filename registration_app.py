@@ -1,12 +1,10 @@
 import sys
 import os
-import json
+from flask import Flask, render_template, request, redirect
+from datetime import datetime
+
 sys.path.append(os.path.join(os.path.dirname(__file__), 'assets'))
 import common_udf as cf
-
-from flask import Flask, render_template, url_for, request, redirect
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 
 app = Flask(__name__)
 
