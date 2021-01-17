@@ -42,18 +42,14 @@ def create_user(conn, fname, lname, email, pswrd):
     try:
         user_valid = ''' Select u_email from user_cred 
                 Where u_email = '{}' '''.format(email)
-        print(user_valid)
         cur_val = conn.cursor()
         cur_val.execute(user_valid)
         rec_val = cur_val.fetchall()
-        print( rec_val)
         if len(rec_val):
-            print("User Already Exists")
             return False
 
         sql = ''' INSERT INTO user_cred(u_fst_nm, u_lst_nm, u_email, u_pass_e, created_dt)
                 VALUES('{0}', '{1}', '{2}', '{3}', '{4}') '''.format(fname, lname, email, pswrd, str(dt.utcnow()))
-        print(sql)    
         cur = conn.cursor()
         cur.execute(sql)
         conn.commit()
@@ -70,7 +66,6 @@ def fetch_user(conn, email, pswrd):
                     u_pass_e
                 from user_cred
                 WHERE u_email = '{0}' '''.format(email)
-        print(sql)
         cur = conn.cursor()
         cur.execute(sql)
         rec = cur.fetchone()
