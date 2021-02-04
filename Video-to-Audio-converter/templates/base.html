@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" />
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom_css.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body style="background-image: url( {{url_for('static', filename='mic1.jpg') }});">
+    <!-- This example requires Tailwind CSS v2.0+ -->
+<nav class="border-b-2 border-gray-900 hover:border-gray-800">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start flex-shrink-0 flex items-center">
+          <div class="text-gray-300">
+            <span>
+              <!-- <i class="fa fa-headphones fa-2x gradient-text" aria-hidden="true"></i> -->
+              <i class="fas fa-compact-disc fa-2x fa-spin gradient-text"></i>
+            </span>
+            <a href="/"> <span class = "ml-8 font-2black">VIDEO TO AUDIO CONVERTER</span></a>
+           
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div>
+    {% block body %}{% endblock %}
+  </div>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Video-Audio-Converter</title>
+    <script type="text/javascript">// <![CDATA[
+        function loading(){
+            $("#loading").show();
+            $("#content").hide();       
+        }
+// ]]></script>
+
+{% endblock %}
+
+{% block body %}
+<div id="loading">
+    <div class="loader_cls ">
+        <div class="spinner">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+    </div>
+</div>
+<div class="p-8" id = 'content'>
+    <form action="/log" method="POST">
+        <label for="radio_btn" class="text-gray-400 text-lg">MP3 Quality:</label>
+        <div class="text-gray-300 ml-5 mt-6">
+            <input type="radio" id="low_mp3" name="quality" value="low_mp3" required >
+            <label for="low_mp3">Low Quality</label><br>
+            <input type="radio" id="hq_mp3" name="quality" value="hq_mp3">
+            <label for="hq_mp3">High Quality</label>
+        </div>
+        <br>
+        <hr style="width:60%;">
+        <br>
+        <label for="fl_dr_path" class="text-gray-400 text-lg">File/ Directory Path:</label>
+        <div class="grid grid-cols-2 gap-4 text-black-900">
+            <div class="relative mt-6 " >
+                <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-600 ">
+                <svg class="h-6 w-6 " fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                </div>
+                <input id="fl_dr_path" minlength="8" type="text" name="fl_dr_path" class="placeholder-gray-500 pl-10 pr-4 rounded-lg border-2 border-yellow-400 w-full py-2 focus:outline-none focus:border-red-800" placeholder="Please Enter File/ Directory Path Here" required/>
+            </div>
+            <div class="mt-6 w-1/5">
+                <button type="submit" onclick="loading();"
+                    class="flex items-center justify-center focus:outline-none 
+                        text-white text-sm sm:text-base rounded py-2 w-full module-border-wrap">
+                <span class="mr-2 font-bold">CONVERT</span>
+                <span>
+                    <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                    </svg>
+                </span>
+                </button>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <hr style="width:60%;">
+        <br>
+        
+        <div class="w-3/5">
+            <p class="text-gray-400 text-lg">How To Use:</p>
+            <div class="text-gray-300 ml-5 mt-6">
+                <p> Add Source Directory or Single file that need to be Converted <br> Converted files will be inserted in the immediate folder in Vid_Aud_Convert directory. </p>
+            </div>
+        </div>
+    </form>
+    
+</div>
+  
+  
+{% endblock %}

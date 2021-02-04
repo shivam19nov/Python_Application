@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Logs</title>
+{% endblock %}
+
+{% block body %}
+<section>
+  <h2 class='text_deco_h2'>LOGS</h2>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th class="num_hd">#</th>
+          <th class="source_file_hd">Source File</th>
+          <th class="target_file_hd">Target File</th>
+          <th class="output_format_hd">Quality</th>
+          <th class="successful_hd">Successful?</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for i in results %}
+          <tr>
+            <td class="num">{{i.index}}</td>
+            <td class="source_file">{{i.src_file}}</td>
+            <td class="target_file">{{i.tgt_file}}</td>
+            <td class="output_format">{{i.tgt_file_qlt}}</td>
+            <td class="successful">{{i.status}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+</section>
+{% endblock %}
